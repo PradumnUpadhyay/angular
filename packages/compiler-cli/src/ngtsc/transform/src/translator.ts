@@ -56,7 +56,7 @@ export class ImportManager {
   }
 
   getAllImports(contextPath: string, rewriteCoreImportsTo: ts.SourceFile|null):
-    { name: string, as: string }[] {
+    {name: string, as: string}[] {
     return Array.from(this.moduleToIndex.keys()).map(name => {
       const as: string|null = this.moduleToIndex.get(name) !;
       if (rewriteCoreImportsTo !== null && name === '@angular/core') {
